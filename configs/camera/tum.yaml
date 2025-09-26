@@ -1,0 +1,38 @@
+%YAML:1.0
+
+image_height: 512
+image_width: 512
+use_imu: 1
+
+depth_lower_thr: 0.1
+depth_upper_thr: 10.0
+max_y_diff: 1
+
+# Calibration
+distortion_type: 1  # 0 for undistorted inputs, 1 for radial-tangential: [k1, k2, p1, p2, k3], 2 for equidistant/fisheye:  [k1, k2, k3, k4, 0].
+cam0:
+  intrinsics: [190.97847715128717, 190.9733070521226, 254.93170605935475, 256.8974428996504] # fx, fy, cx, cy
+  distortion_coeffs: [0.0034823894022493434, 0.0007150348452162257, -0.0020532361418706202, 0.00020293673591811182, 0]
+  T_type: 0           # 0 for Euroc format, the following T is Tbc. 1 for Kalibr format, the following T is Tcb
+  T: 
+  - [0.999999445773493, 0.000791687752817, 0.000694034010224, 0.101063427414194]
+  - [-0.000823363992158, 0.998899461915674, 0.046895490788700, 0.001946204678584]
+  - [-0.000656143613644, -0.046896036240590, 0.998899560146304, 0.001015350132563]
+  - [0.0, 0.0, 0.0, 1.0]
+cam1:
+  intrinsics: [190.44236969414825, 190.4344384721956, 252.59949716835982, 254.91723064636983] 
+  distortion_coeffs: [0.0034003170790442797,  0.001766278153469831, -0.00266312569781606, 0.0003299517423931039, 0]
+  T_type: 0           
+  T: 
+  - [0.9999221, 0.0006674261, -0.01246673, 0.03954445]
+  - [-0.01246507, -0.00243322, -0.9999193, -0.06110263]
+  - [-0.0006977066, 0.9999968, -0.002424711, -0.008894352]
+  - [0.0, 0.0, 0.0, 1.0]
+
+# IMU
+rate_hz: 200
+gyroscope_noise_density: 1.6968e-04     # [ rad / s / sqrt(Hz) ]   ( gyro "white noise" )
+gyroscope_random_walk: 1.9393e-05       # [ rad / s^2 / sqrt(Hz) ] ( gyro bias diffusion )
+accelerometer_noise_density: 2.0000e-3  # [ m / s^2 / sqrt(Hz) ]   ( accel "white noise" )
+accelerometer_random_walk: 3.0000e-3    # [ m / s^3 / sqrt(Hz) ].  ( accel bias diffusion )
+g_value: 9.81007
