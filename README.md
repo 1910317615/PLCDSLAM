@@ -11,7 +11,10 @@
 * Boost
 * yolov8n
 
+## :book: Data
 
+
+```
 dataroot
 ├── cam0
 │   └── data
@@ -27,6 +30,8 @@ dataroot
 │       └── ......
 └── imu0
     └── data.csv
+
+```
 
 ## :computer: Build
 ```
