@@ -11,7 +11,7 @@
 * Boost
 * yolov8n
 
-* ```
+
 dataroot
 ├── cam0
 │   └── data
